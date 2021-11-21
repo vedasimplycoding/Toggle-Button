@@ -1,0 +1,57 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.toggle-btn input {
+    display:none;
+}
+.toggle-btn .background {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background:#fff;
+    z-index:-1;
+    transition:all 500ms ease-in-out;
+}
+.toggle-btn label {
+    display:block;
+    width:150px;
+    height:80px;
+    background:#ddd;
+    border-radius:40px;
+    box-shadow:0px 0px 10px 5px rgba(0,0,0,0.05);
+    cursor:pointer;
+    transition:all 500ms ease-in-out;
+}
+.toggle-btn .circle {
+    position:absolute;
+    top:50%;
+    right:50.2vw;
+    width:60px;
+    height:60px;
+    background:#fff;
+    border-radius:50%;
+    transform:translateY(-50%) rotate(0deg);
+    transform-origin:105% 50%;
+    pointer-events:none;
+    transition:all 500ms ease-in-out;
+}
+.toggle-btn input:checked + label {
+    transform:rotate(180deg);
+}
+.toggle-btn input:checked ~ .circle {
+    background:#111;
+    transform:translateY(-50%) rotate(-180deg);
+}
+.toggle-btn input:checked ~ .background {
+    background:#111;
+}
